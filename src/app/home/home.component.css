@@ -1,0 +1,29 @@
+.row {
+    height: 100vh;
+    background-image: url("/assets/images/automobi.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+ 
+.btn {
+    text-align: center;
+    font-size: 30px;
+    border-radius: 4rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 3rem;
+    transition: all 0.2s;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    
+}
+.form-signin {
+    width: 100%
+}
+ .card-body {
+    padding: 2rem;
+}
