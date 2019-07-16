@@ -13,9 +13,8 @@ import { CameraComponent } from './camera/camera.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -31,15 +30,13 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     
   ],
   imports: [
+    ButtonsModule,
     BrowserModule, 
     AppRoutingModule,
-    
+    HttpClientModule,
     BrowserAnimationsModule,
-    
-  
    ],
-   
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
