@@ -37,7 +37,7 @@ GPIO.output(CAR_CHANNEL, False)
 
 #Gps setup
 gpgga_info = "$GPGGA,"
-ser = serial.Serial ("/dev/ttyS0")              #Open port with baud rate
+ser = serial.Serial ("/dev/ttyAMA0")              #Open port with baud rate
 GPGGA_buffer = 0
 NMEA_buff = 0
 lat_in_degrees = 0
@@ -84,29 +84,29 @@ def static_proxy(path):
 def redirect_to_index():
     return send_from_directory(root, 'index.html')
 
-@app.route('api/shutdown', methods=['GET'])
+@app.route('/api/shutdown/', methods=['GET'])
 def shutdown():
     os.system("sudo shutdown -h now")
     return "System Closed"
 
-@app.route('api/caron', methods=['GET'])
-def shutdown():
+@app.route('/api/caron/', methods=['GET'])
+def caron():
     GPIO.output(CAR_CHANNEL, True)
     return "Car turned on"
 
-@app.route('api/caroff', methods=['GET'])
-def shutdown():
+@app.route('/api/caroff/', methods=['GET'])
+def caroff():
     GPIO.output(CAR_CHANNEL, False)
     return "Car turned off"
 
-@app.route('api/speed', methods=['GET'])
+@app.route('/api/speed/', methods=['GET'])
 def speed():
     data = {
-        "speed":0  
+        "speed":0
     }
     return jsonify(data)
 
-@app.route('api/flame', methods=['GET'])
+@app.route('/api/flame/', methods=['GET'])
 def flame():
     flm_inp = GPIO.input(FIRE_CHANNEL)
     if( flm_inp == False):
@@ -120,7 +120,7 @@ def flame():
     }
     return jsonify(data)
 
-@app.route('api/gps', methods=['GET'])
+@app.route('/api/gps/', methods=['GET'])
 def gps_api():
     received_data = (str)(ser.readline())
     GPGGA_data_available = received_data.find(gpgga_info)
@@ -135,7 +135,7 @@ def gps_api():
     }
     return jsonify(data)
 
-@app.route("api/mail", methods=["POST"])
+@app.route("/api/mail/", methods=["POST"])
 def mailer():
     sub = request.json['sub']
     body = request.json['body']
