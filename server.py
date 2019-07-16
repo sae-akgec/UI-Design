@@ -22,6 +22,11 @@ def static_proxy(path):
 def redirect_to_index():
     return send_from_directory(root, 'index.html')
 
+@app.route('/shutdown', methods=['GET'])
+def shutdown():
+    os.system("sudo shutdown -h now")
+    return "System Closed"
+
 
 if __name__ == '__main__':
     app.run(port=5000, host='0.0.0.0', debug=True)

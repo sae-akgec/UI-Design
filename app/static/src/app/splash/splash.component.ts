@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-splash',
@@ -11,7 +12,7 @@ export class SplashComponent implements OnInit {
   car_id: string;
   id: any;
 
-  constructor(private _appService: AppService) {
+  constructor(private _appService: AppService, private router: Router) {
   }
 
   ngOnInit() {
@@ -36,6 +37,7 @@ export class SplashComponent implements OnInit {
       this._appService.getCarById(this.car_id).subscribe((car) => {
         if (car.car_status.status) {
           console.log("Car is active");
+          this.router.navigate(['home']);
         }
       else{
         console.log("Car is not active");

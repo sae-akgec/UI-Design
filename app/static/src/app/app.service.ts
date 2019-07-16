@@ -23,8 +23,14 @@ export class AppService {
             'Content-Type': 'application/json; charset=utf-8'
         });
         return this.http.get<any>(this.domain + '/api/cars/' + car_id + '/', { headers: headers })
-      }
+    }
 
+    shutdown(): Observable<any> {
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8'
+        });
+        return this.http.get<any>("http://localhost:5000" + '/shutdown/', { headers: headers })
+    }
 
     // getEvents(): Observable<any[]> {
     //     const headers = new HttpHeaders({

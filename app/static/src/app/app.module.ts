@@ -16,6 +16,9 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 
+import { AgmCoreModule } from '@agm/core';            // @agm/core
+import { AgmDirectionModule } from 'agm-direction';   // agm-direction
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,6 @@ import { AppService } from './app.service';
     SettingsComponent,
     RideComponent,
     CameraComponent,
-    
   ],
   imports: [
     ButtonsModule,
@@ -35,6 +37,10 @@ import { AppService } from './app.service';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AgmCoreModule.forRoot({ // @agm/core
+      apiKey: 'AIzaSyA_EJj_JndYvh4kfX5RgzJOxrWSWXe406M',
+    }),
+    AgmDirectionModule,     // agm-direction
    ],
   providers: [AppService],
   bootstrap: [AppComponent]
