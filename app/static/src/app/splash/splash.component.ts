@@ -16,7 +16,7 @@ export class SplashComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._appService.getCarByNumber("123").subscribe((car) => {
+    this._appService.getCarByNumber("bravado19").subscribe((car) => {
       this.car_id = car._id;
     }, (err) => {
       console.log(err);
