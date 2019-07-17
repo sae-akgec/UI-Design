@@ -19,15 +19,15 @@
           <button class="text-center btn btn-lg btn-success btn-block text-uppercase"
             (click)="mailEmergency()">Emergency</button>
           <button class="text-center btn btn-lg btn-danger btn-block text-uppercase"
-            routerLink="../home">Ride Completed</button>
+          (click)="endJourney()">Ride Completed</button>
         </div>
       </div>
     </div>
     <div class="col-9">
-      <!-- <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16">
+      <agm-map [latitude]="start_lat" [longitude]="start_lng" [zoom]="16">
         <agm-direction [origin]="origin" [destination]="destination">
         </agm-direction>
-      </agm-map> -->
+      </agm-map>
     </div>
   </div>
 </div>

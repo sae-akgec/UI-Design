@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-camera',
@@ -11,5 +11,12 @@ export class CameraComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @ViewChild('videoPlayer') videoplayer: ElementRef;
+
+  toggleVideo(event: any) {
+    this.videoplayer.nativeElement.play();
+  }
+
 
 }

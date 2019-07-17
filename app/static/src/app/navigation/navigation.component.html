@@ -1,0 +1,29 @@
+<div class="conatainer-fluid">
+    <div class="row no-gutters">
+        <div class="col-12">
+            <div class="text-center">
+                <button routerLink="../home" class="btn btn-primary btn-block btn-lg">Back to Home</button>
+            </div>
+        </div>
+        <div class="input-group input-group-sm col-6">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Des Lat</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                value="{{des_lat}}">
+        </div>
+        <div class="input-group input-group-sm col-6">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Des Lng</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                value="{{des_lng}}">
+        </div>
+    </div>
+    <div>
+        <agm-map [latitude]="des_lat" [longitude]="des_lng" [zoom]="14" (mapClick)="placeMarker($event)">
+            <agm-marker [latitude]="des_lat" [longitude]="des_lng"></agm-marker>
+        </agm-map>
+    </div>
+
+</div>

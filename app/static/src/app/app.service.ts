@@ -6,7 +6,7 @@ import { DOMAIN } from './assets';
 @Injectable()
 export class AppService {
     domain: string;
-    car:any;
+    car: any;
 
     lat = 28.346678;
     lng = 77.534380;
@@ -15,7 +15,7 @@ export class AppService {
         this.domain = DOMAIN
     }
 
-    setDestination(lat, lng){
+    setDestination(lat, lng) {
         this.lat = lat;
         this.lng = lng;
     }
@@ -39,6 +39,20 @@ export class AppService {
             'Content-Type': 'application/json; charset=utf-8'
         });
         return this.http.get<any[]>(this.domain + '/api/history/car/' + this.car._id + '/', { headers: headers })
+    }
+
+    endCarJourney(id): Observable<any[]> {
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8'
+        });
+        return this.http.get<any[]>(this.domain + '/api/history/' + id + '/end/', { headers: headers })
+    }
+
+    updateCarStatus(body): Observable<any> {
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8'
+        });
+        return this.http.post(this.domain + '/api/cars/' + this.car._id + '/status/', body, { headers: headers })
     }
 
     addCarHistory(body): Observable<any> {
@@ -99,5 +113,5 @@ export class AppService {
         return this.http.post("http://localhost:5000/api" + '/mail/', body, { headers: headers })
     }
 
-    
+
 }
