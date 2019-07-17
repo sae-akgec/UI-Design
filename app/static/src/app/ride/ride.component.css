@@ -4,5 +4,15 @@ agm-map {
 .button-col{
     height: 225px;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid transparent;
+}
+
+.button-col img{
+    max-height: 190px;
+    margin-left: 30px;
+}
+
+.button-col .speed{
+    margin-top: 30px;
+    font-size: 6rem;
 }

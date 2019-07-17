@@ -131,7 +131,7 @@ def gps_api():
 
     data = {
         "lat": lat_in_degrees,
-        "lon": long_in_degrees
+        "lng": long_in_degrees
     }
     return jsonify(data)
 

@@ -18,6 +18,7 @@ export class SplashComponent implements OnInit {
   ngOnInit() {
     this._appService.getCarByNumber("bravado19").subscribe((car) => {
       this.car_id = car._id;
+      this._appService.car = car;
     }, (err) => {
       console.log(err);
     })
@@ -37,6 +38,7 @@ export class SplashComponent implements OnInit {
       this._appService.getCarById(this.car_id).subscribe((car) => {
         if (car.car_status.status) {
           console.log("Car is active");
+          this._appService.car = car;
           this.router.navigate(['home']);
         }
       else{
