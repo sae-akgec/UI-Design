@@ -40,8 +40,8 @@ gpgga_info = "$GPGGA,"
 # ser = serial.Serial ("/dev/ttyAMA0")              #Open port with baud rate
 GPGGA_buffer = 0
 NMEA_buff = 0
-lat_in_degrees = 0
-long_in_degrees = 0
+lat_in_degrees = 28.346678
+long_in_degrees = 77.534380
 
 def GPS_Info(NMEA_buffer):
     global NMEA_buff
