@@ -37,7 +37,7 @@ GPIO.output(CAR_CHANNEL, False)
 
 #Gps setup
 gpgga_info = "$GPGGA,"
-ser = serial.Serial ("/dev/ttyAMA0")              #Open port with baud rate
+# ser = serial.Serial ("/dev/ttyAMA0")              #Open port with baud rate
 GPGGA_buffer = 0
 NMEA_buff = 0
 lat_in_degrees = 0
@@ -109,9 +109,9 @@ def speed():
 @app.route('/api/flame/', methods=['GET'])
 def flame():
     flm_inp = GPIO.input(FIRE_CHANNEL)
-    if( flm_inp == False):
+    if( flm_inp == True):
         flm = False
-    elif (flm_inp == True):
+    elif (flm_inp == False):
         flm = True
     else:
         flm = False
@@ -122,12 +122,12 @@ def flame():
 
 @app.route('/api/gps/', methods=['GET'])
 def gps_api():
-    received_data = (str)(ser.readline())
-    GPGGA_data_available = received_data.find(gpgga_info)
-    if (GPGGA_data_available>0):
-        GPGGA_buffer = received_data.split("$GPGGA,",1)[1]  #store data coming after "$GPGGA," string 
-        NMEA_buffer = (GPGGA_buffer.split(','))               #store comma separated data in buffer
-        GPS_Info(NMEA_buffer)
+    # received_data = (str)(ser.readline())
+    # GPGGA_data_available = received_data.find(gpgga_info)
+    # if (GPGGA_data_available>0):
+        #GPGGA_buffer = received_data.split("$GPGGA,",1)[1]  #store data coming after "$GPGGA," string 
+        #NMEA_buffer = (GPGGA_buffer.split(','))               #store comma separated data in buffer
+        #GPS_Info(NMEA_buffer)
 
     data = {
         "lat": lat_in_degrees,
