@@ -112,6 +112,11 @@ export class RideComponent implements OnInit, AfterViewInit, OnDestroy {
     )
   }
 
+
+  Batterylevel(): void {
+    this.BatteryImage = "/assets/charging.jpg";
+  }
+
   mailDanger(sub: string) {
     let mail = {
       "sub": sub,

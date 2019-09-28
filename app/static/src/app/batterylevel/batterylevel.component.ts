@@ -6,16 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./batterylevel.component.css']
 })
 export class BatterylevelComponent implements OnInit {
-  public flameImage = "/assets/flameok.png"
+  public BatteryImage = "/assets/charging.jpg"
   timerInteval;
   globalTimer;
-  isDanger = false;
-  status = true;
   history_id;
 
   constructor() { }
 
   ngOnInit() {
   }
+  ngAfterViewInit(): void 
+    this.timerInteval = setInterval(() => {
 
-}
+    this.Batterylevel();
+
+    Batterylevel(): void {
+      this.BatteryImage = "/assets/charging.jpg";
+    }
+  }

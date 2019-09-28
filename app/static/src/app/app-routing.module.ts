@@ -7,6 +7,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StatsComponent } from './stats/stats.component';
 import { CameraComponent } from './camera/camera.component';
+import { combineAll } from 'rxjs/operator/combineAll';
+import { BatterylevelComponent } from './batterylevel/batterylevel.component';
 
 
 
@@ -18,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'stats', component: StatsComponent },
   { path: 'camera', component: CameraComponent },
+  { path: 'battery', component: BatterylevelComponent }
 
 
 ];
