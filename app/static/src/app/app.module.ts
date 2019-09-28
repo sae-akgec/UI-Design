@@ -16,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 
 import { AgmCoreModule } from '@agm/core';            // @agm/core
-import { AgmDirectionModule } from 'agm-direction';   // agm-direction
+import { AgmDirectionModule } from 'agm-direction';
+import { BatterylevelComponent } from './batterylevel/batterylevel.component';   // agm-direction
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AgmDirectionModule } from 'agm-direction';   // agm-direction
     SettingsComponent,
     RideComponent,
     CameraComponent,
+    BatterylevelComponent,
   ],
   imports: [
     ButtonsModule,
