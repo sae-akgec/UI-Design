@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StatsComponent } from './stats/stats.component';
 import { CameraComponent } from './camera/camera.component';
+import { BatterylevelComponent } from './batterylevel/batterylevel.component';
 
 
 const appRoutes: Routes = [
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'stats', component: StatsComponent },
   { path: 'camera', component: CameraComponent },
- 
+  { path: 'batterylevel', component: BatterylevelComponent }
+
 ];
 
 @NgModule({
