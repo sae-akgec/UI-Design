@@ -1,0 +1,33 @@
+<div class="fluid-container">
+    <div class="row no-gutters">
+        <div class="col-3">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <div class="button-col">
+                        <h4 class="text-center text-primary">Indicator</h4>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="button-col">
+                        <h1 class="text-center speed text-danger">{{carSpeed}}</h1>
+                        <h3 class="text-center text-danger">Km/hr</h3>
+                        <h5 class="text-center text-primary">Speed Meter</h5>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button class="text-center btn btn-lg btn-success btn-block text-uppercase"
+                        (click)="mailEmergency()">Emergency</button>
+                    <button class="text-center btn btn-lg btn-danger btn-block text-uppercase"
+                        (click)="endJourney()">Ride
+                        Completed</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <agm-map [latitude]="start_lat" [longitude]="start_lng" [zoom]="16">
+                <agm-direction [origin]="origin" [destination]="destination">
+                </agm-direction>
+            </agm-map>
+        </div>
+    </div>
+</div>
