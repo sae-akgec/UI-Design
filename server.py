@@ -1,4 +1,4 @@
-
+import os
 import time
 import sys
 import serial
@@ -79,7 +79,6 @@ def convert_to_degrees(raw_value):
     position = degrees + mm_mmmm
     position = "%.6f" % (position)
     return position
-
 
 # ---------------------------------------------------------------GPS Code ends
 

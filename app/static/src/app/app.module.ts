@@ -17,8 +17,6 @@ import { AppService } from './app.service';
 
 import { AgmCoreModule } from '@agm/core';            // @agm/core
 import { AgmDirectionModule } from 'agm-direction';
-import { BatterylevelComponent } from './batterylevel/batterylevel.component';   // agm-direction
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,11 +27,11 @@ import { BatterylevelComponent } from './batterylevel/batterylevel.component';  
     SettingsComponent,
     RideComponent,
     CameraComponent,
-    BatterylevelComponent,
+
   ],
   imports: [
     ButtonsModule,
-    BrowserModule, 
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -41,7 +39,7 @@ import { BatterylevelComponent } from './batterylevel/batterylevel.component';  
       apiKey: 'AIzaSyA_EJj_JndYvh4kfX5RgzJOxrWSWXe406M',
     }),
     AgmDirectionModule,     // agm-direction
-   ],
+  ],
   providers: [AppService],
   bootstrap: [AppComponent]
 })
