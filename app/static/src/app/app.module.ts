@@ -17,8 +17,7 @@ import { AppService } from './app.service';
 
 import { AgmCoreModule } from '@agm/core';            // @agm/core
 import { AgmDirectionModule } from 'agm-direction';
-import { SpeedUpComponent } from './speed-up/speed-up.component';
-import { BatteryComponent } from './battery/battery.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +28,7 @@ import { BatteryComponent } from './battery/battery.component';
     SettingsComponent,
     RideComponent,
     CameraComponent,
-    SpeedUpComponent,
-    BatteryComponent,
+
 
   ],
   imports: [
