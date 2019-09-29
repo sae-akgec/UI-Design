@@ -14,8 +14,6 @@ export class RideComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public current_lat = 28.348678;
   public current_lng = 77.537380;
-  public speed = 52
-  public avgspeed = 63
 
 
   public origin: any;

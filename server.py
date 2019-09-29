@@ -43,32 +43,23 @@ GPGGA_buffer = 0
 NMEA_buff = 0
 lat_in_degrees = 28.346678
 long_in_degrees = 77.534380
-speed = 0
-avgspeed = 0
 
 
 def GPS_Info(NMEA_buffer):
     global NMEA_buff
     global lat_in_degrees
     global long_in_degrees
-    global speed
-    global avgspeed
     NMEA_buff = NMEA_buffer
     nmea_time = []
     nmea_latitude = []
     nmea_longitude = []
-    nmea_speed = []
-    nmea_avgspeed = []
     nmea_time = NMEA_buff[0]  # extract time from GPGGA string
     nmea_latitude = NMEA_buff[1]  # extract latitude from GPGGA string
     nmea_longitude = NMEA_buff[3]  # extract longitude from GPGGA string
-    nmea_speed = NMEA_buff[2]
 
     print("NMEA Time: ", nmea_time, '\n')
     print("NMEA Latitude:", nmea_latitude,
           "NMEA Longitude:", nmea_longitude, '\n')
-    print("NMEA SPEED:", nmea_speed)
-    print("NMEA AVGSPEED:", nmea_avgspeed)
 
     lat = float(nmea_latitude)  # convert string into float for calculation
     longi = float(nmea_longitude)  # convertr string into float for calculation
@@ -89,10 +80,6 @@ def convert_to_degrees(raw_value):
     position = "%.6f" % (position)
     return position
 
-
-def convert speed to avgspeed():
-    avgspeed = speed/60
-    return avgspeed
 # ---------------------------------------------------------------GPS Code ends
 
 
@@ -158,9 +145,7 @@ def gps_api():
 
     data = {
         "lat": lat_in_degrees,
-        "lng": long_in_degrees,
-        "speed": speed,
-        "avgspeed": avgspeed
+        "lng": long_in_degrees
     }
     return jsonify(data)
 
