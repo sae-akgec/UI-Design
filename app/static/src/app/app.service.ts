@@ -75,10 +75,6 @@ export class AppService {
         });
         return this.http.get<any>("http://localhost:5000/api" + '/speed/', { headers: headers })
     }
-
-
-
-
     caron(): Observable<any> {
         const headers = new HttpHeaders({
             'Content-Type': 'application/json; charset=utf-8'
@@ -105,8 +101,6 @@ export class AppService {
         });
         return this.http.get<any>("http://localhost:5000/api" + '/batterylevel/', { headers: headers })
     }
-
-
     mail(body: any): Observable<any> {
         const headers = new HttpHeaders({
             'Content-Type': 'application/json; charset=utf-8'
