@@ -26,6 +26,10 @@ mail = Mail(app)
 # GPIO SETUP
 FIRE_CHANNEL = 12
 CAR_CHANNEL = 19
+BATTERY_LEVEL1 = 5
+BATTERY_LEVEL2 = 6
+BATTERY_LEVEL3 = 13
+BATTERY_LEVEL4 = 19
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(FIRE_CHANNEL, GPIO.IN)
@@ -161,6 +165,22 @@ def mailer():
     msg.body = body
     mail.send(msg)
     return "Mail sent successfully"
+# ---------------------------------------------------Batteryroute
+@app.route("/api/battery/", methods=["POST"])
+def battery():
+    btr_inp1 = GPIO.input(BATTERY_LEVEL1)
+    btr_inp2 = GPIO.input(BATTERY_LEVEL2)
+    btr_inp3 = GPIO.input(BATTERY_LEVEL3)
+    btr_inp4 = GPIO.input(BATTERY_LEVEL4)
+
+    data = {
+        "b1": str(btr_inp1),
+        "b2": str(btr_inp2),
+        "b3": str(btr_inp3),
+        "b4": str(btr_inp4),
+
+    }
+    return jsonify(data)
 
 
 if __name__ == '__main__':
